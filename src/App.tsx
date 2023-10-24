@@ -1,4 +1,4 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, Link } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
@@ -6,7 +6,15 @@ import {
   IonTabBar,
   IonTabButton,
   IonTabs,
-  setupIonicReact
+  IonLabel,
+  IonMenu,
+  IonHeader,
+  IonList,
+  IonItem,
+  IonContent,
+  IonTitle,
+  setupIonicReact,
+  IonToolbar
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { person, home, cafe, cart } from 'ionicons/icons';
@@ -17,6 +25,7 @@ import Login from './pages/Login';
 import DetailCafe from './pages/DetailCafe';
 import DetailOrder from './pages/DetailOrder';
 import Register from './pages/Register';
+import ToolBar from './components/ToolBar';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -36,23 +45,24 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import React from "react";
 
 setupIonicReact();
 const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
+    <IonApp>
+      <IonReactRouter>
+        <ToolBar />
+        <IonRouterOutlet id="main-content">
           <Route exact path="/login">
             <Login />
           </Route>
           <Route exact path="/register">
             <Register />
           </Route>
-          <Route exact path="/tab1">
+          <Route path="/tab1">
             <Tab1 />
           </Route>
-          <Route exact path="/tab2">
+          <Route path="/tab2">
             <Tab2 />
           </Route>
           <Route path="/tab3">
@@ -68,12 +78,9 @@ const App: React.FC = () => (
             <Redirect to="/login" />
           </Route>
         </IonRouterOutlet>
-        <IonTabBar>
-
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
+      </IonReactRouter>
+    </IonApp>
 );
 
 export default App;
+

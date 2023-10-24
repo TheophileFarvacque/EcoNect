@@ -37,7 +37,6 @@ const Tab3: React.FC = () => {
                     </IonItem>
                 </div>
             </IonContent>
-            <ToolBar/>
         </IonPage>
     );
 };

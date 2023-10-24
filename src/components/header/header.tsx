@@ -1,8 +1,9 @@
-import {IonButton, IonHeader, IonTitle, IonToolbar, IonRow} from "@ionic/react";
+import {IonButton, IonHeader, IonTitle, IonToolbar, IonRow, IonMenuButton, IonButtons} from "@ionic/react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faRightFromBracket} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Header: React.FC = () => {
     const history = useHistory();
@@ -17,8 +18,12 @@ const Header: React.FC = () => {
     return (
         <IonHeader>
             <IonToolbar>
+                <IonButtons slot="start">
+                    <FontAwesomeIcon icon={faBars} />
+                    <IonMenuButton></IonMenuButton>
+                </IonButtons>
                 <IonRow>
-                    <IonTitle style={{textAlign: "center"}}>Econnect</IonTitle>
+                    <IonTitle style={{ textAlign: 'center' }}>Econnect</IonTitle>
                     <IonButton onClick={logout}>
                         <FontAwesomeIcon icon={faRightFromBracket} />
                     </IonButton>

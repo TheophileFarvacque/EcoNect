@@ -8,7 +8,7 @@ import {
     IonCardSubtitle,
     IonCardContent,
     IonCardHeader,
-    IonCardTitle, IonSearchbar, IonButton
+    IonCardTitle, IonSearchbar, IonButton, IonMenu, IonButtons, IonMenuButton
 } from '@ionic/react';
 import './Tab1.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -95,7 +95,6 @@ const Tab1: React.FC = () => {
                     {paginationButtons}
                 </div>
             </IonContent>
-            <ToolBar />
         </IonPage>
     );
 };

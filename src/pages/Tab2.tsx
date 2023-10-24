@@ -82,7 +82,6 @@ const Tab2: React.FC = () => {
                     {paginationButtons}
                 </div>
             </IonContent>
-            <ToolBar />
         </IonPage>
     );
 };
