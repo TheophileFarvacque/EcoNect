@@ -6,13 +6,13 @@ import {
     IonIcon
 } from '@ionic/react';
 import React from 'react';
-import './Tab3.css';
+import './Profile.css';
 import Header from "../components/header/header";
 import ToolBar from "../components/ToolBar";
 import avatar from "../assets/images/avatar.png"
 
 
-const Tab3: React.FC = () => {
+const Profile: React.FC = () => {
     function getEmail() {
         let email = localStorage.getItem('email');
         return email;
@@ -41,4 +41,4 @@ const Tab3: React.FC = () => {
     );
 };
 
-export default Tab3;
+export default Profile;

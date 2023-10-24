@@ -1,39 +1,26 @@
 import {
+    IonCard, IonCardContent,
+    IonCardHeader, IonCardSubtitle,
+    IonCardTitle,
     IonContent,
-    IonHeader,
+    IonHeader, IonImg,
     IonPage,
+    IonSearchbar,
     IonTitle,
-    IonToolbar,
-    IonCard,
-    IonCardSubtitle,
-    IonCardContent,
-    IonCardHeader,
-    IonCardTitle, IonSearchbar, IonButton, IonMenu, IonButtons, IonMenuButton
+    IonToolbar
 } from '@ionic/react';
-import './Tab1.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
-import car from '../assets/images/car.png';
-import FetchProducts from "../services/mock-data-service";
-import React, {useState} from "react";
-import ToolBar from "../components/ToolBar";
+import ExploreContainer from '../components/ExploreContainer';
+import './Trajet.css';
 import Header from "../components/header/header";
-import axios from "axios";
+import ToolBar from "../components/ToolBar";
+import React, {useState} from "react";
+import FetchProducts from "../services/mock-data-service";
 
-const Tab1: React.FC = () => {
+const Trajet: React.FC = () => {
     const [searchText, setSearchText] = useState('');
-    const {data} = FetchProducts('https://api-revendeurs-qymc.onrender.com/Product');
-    const images = [car];
-    const randomIndex = Math.floor(Math.random() * images.length);
-    const randomImage = images[randomIndex];
+    const {data} = FetchProducts('https://api-revendeurs-qymc.onrender.com/Order');
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(5);
-
-    function randomize(image: number) {
-        const images = [car];
-        image = Math.floor(Math.random() * images.length);
-        return images[image];
-    }
 
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(data?.length / itemsPerPage); i++) {
@@ -42,7 +29,7 @@ const Tab1: React.FC = () => {
 
     // Filter the products based on the search text
     const filteredProducts = data?.filter((product: any) => {
-        return product.name.toLowerCase().includes(searchText.toLowerCase());
+        return product.idCustomer.toString().includes(searchText.toString());
     });
 
     // Calculate the index of the first and last item to be displayed on the current page
@@ -75,18 +62,18 @@ const Tab1: React.FC = () => {
         <IonPage>
             <Header />
             <IonContent fullscreen>
-                <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} placeholder="Search for products" />
+                <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} placeholder="Search for orders" />
                 {currentItems?.map((product: any) => (
                     <div key={product.id}>
-                        <IonCard routerLink={`/DetailCafe/${product.id}`}>
-                            <img alt="Cafe" src={randomize(1)}/>
+                        <IonCard routerLink={`/DetailOrder/${product.id}`} className="bg">
+                            <IonImg class="img"></IonImg>
                             <IonCardHeader>
-                                <IonCardTitle>{product.name}</IonCardTitle>
-                                <IonCardSubtitle>{product.description}</IonCardSubtitle>
+                                <IonCardTitle>Order #{product.idCustomer}</IonCardTitle>
+                                <IonCardSubtitle>{product.createdAt.split('T00:00:00')}</IonCardSubtitle>
                             </IonCardHeader>
 
                             <IonCardContent>
-                                {product.price} €
+
                             </IonCardContent>
                         </IonCard>
                     </div>
@@ -98,4 +85,5 @@ const Tab1: React.FC = () => {
         </IonPage>
     );
 };
-export default Tab1;
+
+export default Trajet;

@@ -18,14 +18,15 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { person, home, cafe, cart } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import Home from './pages/Home';
+import Trajet from './pages/Trajet';
+import Profile from './pages/Profile';
 import Login from './pages/Login';
 import DetailCafe from './pages/DetailCafe';
 import DetailOrder from './pages/DetailOrder';
 import Register from './pages/Register';
 import ToolBar from './components/ToolBar';
+import MapPage from "./pages/MapPage";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -46,6 +47,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import React from "react";
+import ChatBox from "./pages/ChatBox";
 
 setupIonicReact();
 const App: React.FC = () => (
@@ -60,19 +62,19 @@ const App: React.FC = () => (
             <Register />
           </Route>
           <Route path="/tab1">
-            <Tab1 />
+            <Home />
           </Route>
           <Route path="/tab2">
-            <Tab2 />
+            <Trajet />
           </Route>
           <Route path="/tab3">
-            <Tab3 />
+            <Profile />
           </Route>
-          <Route path="/DetailCafe/:id">
-            <DetailCafe />
+          <Route path="/map">
+            <MapPage />
           </Route>
-          <Route path="/DetailOrder/:id">
-            <DetailOrder />
+          <Route path="/chat">
+            <ChatBox />
           </Route>
           <Route exact path="/">
             <Redirect to="/login" />

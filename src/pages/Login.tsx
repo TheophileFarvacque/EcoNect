@@ -47,7 +47,7 @@ const Login: React.FC = () => {
             localStorage.setItem("email", email);
 
             setTimeout(() => {
-                history.push("/Tab1");
+                history.push("/Home");
                 setIsLoading(false);
             }, 1000);
         } else {
@@ -94,7 +94,7 @@ const Login: React.FC = () => {
     //                 console.log(res.data.statusCode);
     //                 if (res.data.statusCode === 200) {
     //                     setTimeout(() => {
-    //                         history.push("/Tab1");
+    //                         history.push("/Home");
     //                         setIsLoading(false);
     //                     }, 1000)
     //                 } else {
