@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel, IonIcon, IonTabButton} from "@ionic/react";
-import {cafe, home, person, cart} from "ionicons/icons";
+import { map, person, car, chatbox, barChart, diamond, home} from "ionicons/icons";
 import {IonReactRouter} from "@ionic/react-router";
 import { Link } from 'react-router-dom';
 
@@ -16,21 +16,45 @@ const ToolBar = () => {
             <IonContent>
                 <IonList>
                     <IonItem>
-                        <IonIcon icon={cafe} slot="start" />
+                        <IonIcon icon={home} slot="start" />
                         <IonLabel>
-                            <Link to="/tab1">Tab 1</Link>
-                        </IonLabel>
-                    </IonItem>
-                    <IonItem>
-                        <IonIcon icon={cart} slot="start" />
-                        <IonLabel>
-                            <Link to="/tab2">Tab 2</Link>
+                            <Link to="/tab1">Accueil</Link>
                         </IonLabel>
                     </IonItem>
                     <IonItem>
                         <IonIcon icon={person} slot="start" />
                         <IonLabel>
-                            <Link to="/tab3">Tab 3</Link>
+                            <Link to="/tab1">Profil</Link>
+                        </IonLabel>
+                    </IonItem>
+                    <IonItem>
+                        <IonIcon icon={chatbox} slot="start" />
+                        <IonLabel>
+                            <Link to="/tab2">Messages</Link>
+                        </IonLabel>
+                    </IonItem>
+                    <IonItem>
+                        <IonIcon icon={car} slot="start" />
+                        <IonLabel>
+                            <Link to="/tab2">Trajets</Link>
+                        </IonLabel>
+                    </IonItem>
+                    <IonItem>
+                        <IonIcon icon={map} slot="start" />
+                        <IonLabel>
+                            <Link to="/tab3">Carte</Link>
+                        </IonLabel>
+                    </IonItem>
+                    <IonItem>
+                        <IonIcon icon={barChart} slot="start" />
+                        <IonLabel>
+                            <Link to="/tab3">Consommation</Link>
+                        </IonLabel>
+                    </IonItem>
+                    <IonItem>
+                        <IonIcon icon={diamond} slot="start" />
+                        <IonLabel>
+                            <Link to="/tab3">Avantages</Link>
                         </IonLabel>
                     </IonItem>
                 </IonList>
