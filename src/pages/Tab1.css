@@ -1,0 +1,31 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.pagination button {
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.pagination button.active {
+    background-color: #007aff;
+    border-radius: 5px;
+    color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .pagination button {
+        margin: 5px;
+        font-size: 14px;
+    }
+}
