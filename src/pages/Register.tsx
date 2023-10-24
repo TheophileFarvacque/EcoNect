@@ -14,7 +14,7 @@ import {
     IonIcon, IonAvatar, IonImg,
     IonAlert, useIonLoading
 } from "@ionic/react";
-import car from "../assets/images/car.jpg";
+import car from "../assets/images/car.png";
 
 
 const Register: React.FC = () => {

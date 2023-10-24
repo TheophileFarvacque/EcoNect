@@ -13,7 +13,7 @@ import {
 import './Tab1.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
-import car from '../assets/images/car.jpg';
+import car from '../assets/images/car.png';
 import FetchProducts from "../services/mock-data-service";
 import React, {useState} from "react";
 import ToolBar from "../components/ToolBar";

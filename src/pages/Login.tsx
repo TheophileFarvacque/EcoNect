@@ -15,7 +15,7 @@ import {
     IonAlert,
     IonLoading
 } from "@ionic/react";
-import car from "../assets/images/car.jpg";
+import car from "../assets/images/car.png";
 import './Login.css';
 import { useHistory } from "react-router-dom";
 import axios from "axios";

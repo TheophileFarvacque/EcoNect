@@ -15,7 +15,6 @@ import Header from "../components/header/header";
 import ToolBar from "../components/ToolBar";
 import React, {useState} from "react";
 import FetchProducts from "../services/mock-data-service";
-import order from "../assets/images/order.png";
 
 const Tab2: React.FC = () => {
     const [searchText, setSearchText] = useState('');
@@ -67,7 +66,7 @@ const Tab2: React.FC = () => {
                 {currentItems?.map((product: any) => (
                     <div key={product.id}>
                         <IonCard routerLink={`/DetailOrder/${product.id}`} className="bg">
-                            <IonImg src={order} class="img"></IonImg>
+                            <IonImg class="img"></IonImg>
                             <IonCardHeader>
                                 <IonCardTitle>Order #{product.idCustomer}</IonCardTitle>
                                 <IonCardSubtitle>{product.createdAt.split('T00:00:00')}</IonCardSubtitle>
