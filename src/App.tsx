@@ -67,7 +67,7 @@ const App: React.FC = () => (
           <Route path="/tab2">
             <Trajet />
           </Route>
-          <Route path="/tab3">
+          <Route path="/profile">
             <Profile />
           </Route>
           <Route path="/map">
