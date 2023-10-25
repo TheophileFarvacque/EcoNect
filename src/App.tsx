@@ -48,6 +48,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import React from "react";
 import ChatBox from "./pages/ChatBox";
+import ChatList from "./pages/ChatList";
 
 setupIonicReact();
 const App: React.FC = () => (
@@ -73,7 +74,10 @@ const App: React.FC = () => (
           <Route path="/map">
             <MapPage />
           </Route>
-          <Route path="/chat">
+          <Route path="/chatList">
+            <ChatList />
+          </Route>
+          <Route path="/chat/:contactId">
             <ChatBox />
           </Route>
           <Route exact path="/">
