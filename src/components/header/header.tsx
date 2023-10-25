@@ -19,8 +19,7 @@ const Header: React.FC = () => {
         <IonHeader>
             <IonToolbar>
                 <IonButtons slot="start">
-                    <FontAwesomeIcon icon={faBars} />
-                    <IonMenuButton></IonMenuButton>
+                    <IonMenuButton color={"dark"}></IonMenuButton>
                 </IonButtons>
                 <IonRow>
                     <IonTitle style={{ textAlign: 'center' }}>Econnect</IonTitle>

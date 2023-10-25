@@ -36,7 +36,7 @@ const ToolBar = () => {
                     <IonItem>
                         <IonIcon icon={car} slot="start" />
                         <IonLabel>
-                            <Link to="/tab2">Trajets</Link>
+                            <Link to="/paths">Trajets</Link>
                         </IonLabel>
                     </IonItem>
                     <IonItem>
@@ -54,7 +54,7 @@ const ToolBar = () => {
                     <IonItem>
                         <IonIcon icon={diamond} slot="start" />
                         <IonLabel>
-                            <Link to="/tab3">Avantages</Link>
+                            <Link to="/avantages">Avantages</Link>
                         </IonLabel>
                     </IonItem>
                 </IonList>
