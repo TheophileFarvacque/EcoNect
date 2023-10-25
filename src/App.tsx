@@ -27,6 +27,7 @@ import DetailOrder from './pages/DetailOrder';
 import Register from './pages/Register';
 import ToolBar from './components/ToolBar';
 import MapPage from "./pages/MapPage";
+import Avantage from './pages/Avantage';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -64,7 +65,7 @@ const App: React.FC = () => (
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/tab2">
+          <Route path="/paths">
             <Trajet />
           </Route>
           <Route path="/profile">
@@ -75,6 +76,9 @@ const App: React.FC = () => (
           </Route>
           <Route path="/chat">
             <ChatBox />
+          </Route>
+          <Route path="/avantage">
+            <Avantage />
           </Route>
           <Route exact path="/">
             <Redirect to="/login" />
