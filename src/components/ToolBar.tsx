@@ -54,7 +54,7 @@ const ToolBar = () => {
                     <IonItem>
                         <IonIcon icon={diamond} slot="start" />
                         <IonLabel>
-                            <Link to="/avantage">Avantages</Link>
+                            <Link to="/avantages">Avantages</Link>
                         </IonLabel>
                     </IonItem>
                 </IonList>
