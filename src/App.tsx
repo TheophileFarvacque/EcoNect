@@ -49,6 +49,7 @@ import './theme/variables.css';
 import React from "react";
 import ChatBox from "./pages/ChatBox";
 import ChatList from "./pages/ChatList";
+import AddTrip from "./pages/AddTrip";
 
 setupIonicReact();
 const App: React.FC = () => (
@@ -67,6 +68,9 @@ const App: React.FC = () => (
           </Route>
           <Route path="/paths">
             <Trajet />
+          </Route>
+          <Route path="/newPaths">
+            <AddTrip />
           </Route>
           <Route path="/profile">
             <Profile />
