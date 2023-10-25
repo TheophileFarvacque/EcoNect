@@ -41,8 +41,7 @@ const ChatBox: React.FC = () => {
             <Header />
             <IonToolbar>
                 <IonButtons slot="start">
-                    <IonIcon icon={arrowBack} slot="start" />
-                    <IonBackButton defaultHref="/chatList" />
+                    <IonBackButton color={"dark"} defaultHref="/chatList" />
                 </IonButtons>
                 <IonTitle style={{ textAlign: 'center' }}>Chat with  {selectedContact?.name}</IonTitle>
             </IonToolbar>
