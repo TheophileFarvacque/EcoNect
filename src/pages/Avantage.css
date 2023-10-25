@@ -1,0 +1,17 @@
+ion-card-title {
+    font-size: large;
+}
+#points-header {
+    text-align: center;
+    font-size: xx-large;
+  }
+  
+#points {
+    --color: #21cd2fc6;
+    text-align: center;
+    font-size: xx-large;
+  }
+
+ion-button{
+    font-size: small;
+}
