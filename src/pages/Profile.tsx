@@ -3,14 +3,21 @@ import {
     IonImg,
     IonRow,
     IonCol,
-    IonIcon
+    IonIcon,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardContent,
+    IonButton
 } from '@ionic/react';
 import React from 'react';
 import './Profile.css';
 import Header from "../components/header/header";
 import ToolBar from "../components/ToolBar";
 import avatar from "../assets/images/avatar.png"
-
+import graph_co2 from "../assets/images/graph_co2.png"
+import {briefcase, pencil, home} from "ionicons/icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Profile: React.FC = () => {
     function getEmail() {
@@ -31,10 +38,36 @@ const Profile: React.FC = () => {
                             />
                         </IonCol>
                     </IonRow>
-                    <IonItem lines="none">
-                        <IonLabel className="profile-label">Email : </IonLabel>
-                        <IonLabel className="profile-value">{getEmail()}</IonLabel>
-                    </IonItem>
+                    <IonCard class='card'>
+                        <IonCardHeader>
+                            <IonCardTitle className="card-title">John Masterchief</IonCardTitle>
+                        </IonCardHeader>
+                        <IonCardContent>
+                            <IonItem>
+                                <IonIcon icon={home} slot="start" />
+                                <IonLabel className="" >16 Bd Général de Gaulle</IonLabel>
+                                <IonLabel className="profile-value">{getEmail()}</IonLabel>
+                                <IonIcon icon={pencil} slot="end" />
+                            </IonItem>
+                            <IonItem>
+                                <IonIcon icon={briefcase} slot="start" />
+                                <IonLabel className="" >3 rue de Broderie</IonLabel>
+                                <IonLabel className="profile-value">{getEmail()}</IonLabel>
+                                <IonIcon icon={pencil} slot="end" />
+                            </IonItem>
+                        </IonCardContent>
+                    </IonCard>
+                       
+                    <IonCard className='card_conso'>
+                        <IonImg
+                            src={graph_co2}
+                            class="img"
+                        />
+                        <IonLabel className='conso-label'>Consommation de Co2</IonLabel>
+                    </IonCard>
+                    
+                    <IonButton class='avantages' fill='solid' routerLink="/avantages">Mes avantages</IonButton>
+
                 </div>
             </IonContent>
         </IonPage>

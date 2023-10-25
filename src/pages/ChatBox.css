@@ -1,8 +1,14 @@
 .chat-list {
     padding: 16px;
+    margin: 10px;
+}
+
+.chat-content {
+    position: relative;
 }
 
 .chat-bubble {
+    background-color: #007bff;
     margin: 4px;
     padding: 8px;
     border-radius: 12px;
@@ -10,7 +16,7 @@
 
 .user {
     background-color: #007bff;
-    color: white;
+    color: #007bff;
     margin-left: 40%;
 }
 
@@ -19,6 +25,7 @@
 }
 
 .message-input {
+    background-color: white;
     width: 80%;
     border: 1px solid #ccc;
     border-radius: 16px;
@@ -38,4 +45,17 @@
 .input-container {
     display: flex;
     align-items: center;
+}
+
+.chat-content {
+    position: relative;
+}
+
+.bottom-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff; /* Background color for the bottom content */
+    padding: 16px; /* Adjust padding as needed */
 }
