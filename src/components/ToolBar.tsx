@@ -24,7 +24,7 @@ const ToolBar = () => {
                     <IonItem>
                         <IonIcon icon={person} slot="start" />
                         <IonLabel>
-                            <Link to="/tab1">Profil</Link>
+                            <Link to="/profile">Profil</Link>
                         </IonLabel>
                     </IonItem>
                     <IonItem>

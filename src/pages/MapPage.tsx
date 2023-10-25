@@ -6,10 +6,7 @@ import {
     IonTitle,
     IonToolbar,
 } from '@ionic/react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import MarkerClusterGroup from 'react-leaflet-markercluster';
 import Header from "../components/header/header";
-import {LatLng} from "leaflet";
 
 const MapPage: React.FC = () => {
     const initialPosition: [number, number] = [51.505, -0.09];
