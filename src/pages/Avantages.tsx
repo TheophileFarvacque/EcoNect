@@ -1,7 +1,7 @@
 import { IonContent, IonPage } from '@ionic/react';
 import React from 'react';
 import { IonButton, IonCard, IonLabel, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
-import './Avantage.css';
+import './Avantages.css';
 import Header from "../components/header/header";
 
 
