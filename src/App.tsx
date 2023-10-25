@@ -26,9 +26,8 @@ import DetailCafe from './pages/DetailCafe';
 import DetailOrder from './pages/DetailOrder';
 import Register from './pages/Register';
 import ToolBar from './components/ToolBar';
-import MapPage from "./pages/MapPage";
-import Avantage from './pages/Avantages';
-
+import Map from "./pages/Map";
+import Avantages from './pages/Avantages';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -73,7 +72,7 @@ const App: React.FC = () => (
             <Profile />
           </Route>
           <Route path="/map">
-            <MapPage />
+            <Map />
           </Route>
           <Route path="/chatList">
             <ChatList />
@@ -82,7 +81,7 @@ const App: React.FC = () => (
             <ChatBox />
           </Route>
           <Route path="/avantages">
-            <Avantage />
+            <Avantages />
           </Route>
           <Route exact path="/">
             <Redirect to="/login" />
