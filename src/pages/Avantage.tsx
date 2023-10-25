@@ -49,7 +49,7 @@ const Avantage: React.FC = () => {
                 <IonCard className="ion-text-center">
                     <IonCardHeader>
                         <IonCardTitle>Places de cinéma</IonCardTitle>
-                        <IonCardSubtitle> Cout : 450 points</IonCardSubtitle>
+                        <IonCardSubtitle> Cout :450 points</IonCardSubtitle>
                     </IonCardHeader>
                     <IonCardContent>
                         <IonButton fill='solid' size='small'>Récupérer</IonButton>
