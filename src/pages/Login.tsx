@@ -47,7 +47,7 @@ const Login: React.FC = () => {
             localStorage.setItem("email", email);
 
             setTimeout(() => {
-                history.push("/Home");
+                history.push("/home");
                 setIsLoading(false);
             }, 1000);
         } else {

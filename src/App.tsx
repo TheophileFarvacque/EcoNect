@@ -61,7 +61,7 @@ const App: React.FC = () => (
           <Route exact path="/register">
             <Register />
           </Route>
-          <Route path="/tab1">
+          <Route path="/home">
             <Home />
           </Route>
           <Route path="/tab2">
