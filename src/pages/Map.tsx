@@ -1,11 +1,11 @@
-import {IonCol, IonContent, IonCardHeader, IonIcon, IonLabel,  IonCardContent, IonItem, IonPage, IonAvatar, IonRow, IonSearchbar,IonCard, useIonViewWillEnter} from '@ionic/react';
+import {IonCol, IonContent, IonCardHeader, IonIcon, IonLabel,  IonCardContent, IonItem, IonPage, IonAvatar, IonRow, IonSearchbar,IonCard, } from '@ionic/react';
 import React, {useEffect,useRef, useState} from 'react';
 
 import './Map.css';
 import Header from "../components/header/header";
 import {car,chatbox} from "ionicons/icons";
 
-import {Circle, GoogleMap} from '@capacitor/google-maps';
+import {GoogleMap} from '@capacitor/google-maps';
 import {coordinates} from '../assets/datas';
 
 
@@ -72,10 +72,13 @@ const Map: React.FC = () => {
 
         return distance <= radius;
     });
+    function getRandomInt(max:number) {
+        return Math.floor(Math.random() * max);
+    }
     useEffect(() => {
         createMap();
     }, []);
-0
+
     return (
         <IonPage>
             <Header/>
@@ -97,72 +100,34 @@ const Map: React.FC = () => {
             <IonRow>
                 <IonCol>
                     <div>
-                        <h2>Locations Inside the Circle:</h2>
-                        <ul>
+                        <h2>Personnes à proximité:</h2>
                             {results.map((isInside, index) => (
-                                isInside && <li key={index}>{coordinates[index].name}</li>
+                                isInside && <IonCard key={index}>
+                                    <IonCardHeader>
+                                        <IonItem lines="none">
+                                            <IonAvatar>
+                                                <IonIcon icon={car} />
+                                                <IonIcon icon={chatbox} />
+                                            </IonAvatar>
+                                            <IonLabel>
+                                                <h2>{coordinates[index].name}</h2>
+                                            </IonLabel>
+                                        </IonItem>
+                                    </IonCardHeader>
+                                    <IonCardContent>
+                                        <p>
+                                            Nombre passagers: {getRandomInt(4)}
+                                        </p>
+                                    </IonCardContent>
+                                </IonCard>
                             ))}
-                        </ul>
                     </div>
                 </IonCol>
             </IonRow>
-            <IonCard>
-                <IonCardHeader>
-                    <IonItem lines="none">
-                        <IonAvatar>
-                            <IonIcon icon={car} />
-                            <IonIcon icon={chatbox} />
-                        </IonAvatar>
-                        <IonLabel>
-                            <h2>J. Sparrow</h2>
-                        </IonLabel>
-                    </IonItem>
-                </IonCardHeader>
-                <IonCardContent>
-                    <p>
-                        Nombre passagers: 3
-                    </p>
-                </IonCardContent>
-            </IonCard>
-            <IonCard>
-                <IonCardHeader>
-                    <IonItem lines="none">
-                        <IonAvatar>
-                            <IonIcon icon={car} />
-                            <IonIcon icon={chatbox} />
-                        </IonAvatar>
-                        <IonLabel>
-                            <h2>L. Kennedy</h2>
-                        </IonLabel>
-                    </IonItem>
-                </IonCardHeader>
-                <IonCardContent>
-                    <p>
-                        Nombre passagers: 0
-                    </p>
-                </IonCardContent>
-            </IonCard>
-            <IonCard>
-                <IonCardHeader>
-                    <IonItem lines="none">
-                        <IonAvatar>
-                            <IonIcon icon={car} />
-                            <IonIcon icon={chatbox} />
-                        </IonAvatar>
-                        <IonLabel>
-                            <h2>H. Potter</h2>
-                        </IonLabel>
-                    </IonItem>
-                </IonCardHeader>
-                <IonCardContent>
-                    <p>
-                        Nombre passagers: 1
-                    </p>
-                </IonCardContent>
-            </IonCard>
         </IonContent>
         </IonPage>
     );
 };
 
+// @ts-ignore
 export default Map;
