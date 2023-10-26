@@ -42,7 +42,7 @@ const ToolBar = () => {
                     <IonItem>
                         <IonIcon icon={map} slot="start" />
                         <IonLabel>
-                            <Link to="/map">Carte</Link>
+                            <Link to="/home">Carte</Link>
                         </IonLabel>
                     </IonItem>
                     <IonItem>

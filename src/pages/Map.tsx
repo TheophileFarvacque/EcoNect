@@ -1,7 +1,8 @@
-import {IonCol, IonContent, IonPage, IonRow, IonSearchbar, useIonViewWillEnter} from '@ionic/react';
+import {IonCol, IonContent, IonCardHeader, IonIcon, IonLabel,  IonCardContent, IonItem, IonPage, IonAvatar, IonRow, IonSearchbar,IonCard, useIonViewWillEnter} from '@ionic/react';
 import React, {useRef, useState} from 'react';
 import './Map.css';
 import Header from "../components/header/header";
+import {car,chatbox} from "ionicons/icons";
 
 import {GoogleMap} from '@capacitor/google-maps';
 
@@ -68,6 +69,60 @@ const Map: React.FC = () => {
 
                 </IonCol>
             </IonRow>
+            <IonCard>
+                <IonCardHeader>
+                    <IonItem lines="none">
+                        <IonAvatar>
+                            <IonIcon icon={car} />
+                            <IonIcon icon={chatbox} />
+                        </IonAvatar>
+                        <IonLabel>
+                            <h2>J. Sparrow</h2>
+                        </IonLabel>
+                    </IonItem>
+                </IonCardHeader>
+                <IonCardContent>
+                    <p>
+                        Nombre passagers: 3
+                    </p>
+                </IonCardContent>
+            </IonCard>
+            <IonCard>
+                <IonCardHeader>
+                    <IonItem lines="none">
+                        <IonAvatar>
+                            <IonIcon icon={car} />
+                            <IonIcon icon={chatbox} />
+                        </IonAvatar>
+                        <IonLabel>
+                            <h2>L. Kennedy</h2>
+                        </IonLabel>
+                    </IonItem>
+                </IonCardHeader>
+                <IonCardContent>
+                    <p>
+                        Nombre passagers: 0
+                    </p>
+                </IonCardContent>
+            </IonCard>
+            <IonCard>
+                <IonCardHeader>
+                    <IonItem lines="none">
+                        <IonAvatar>
+                            <IonIcon icon={car} />
+                            <IonIcon icon={chatbox} />
+                        </IonAvatar>
+                        <IonLabel>
+                            <h2>H. Potter</h2>
+                        </IonLabel>
+                    </IonItem>
+                </IonCardHeader>
+                <IonCardContent>
+                    <p>
+                        Nombre passagers: 1
+                    </p>
+                </IonCardContent>
+            </IonCard>
         </IonContent>
         </IonPage>
     );
