@@ -166,7 +166,7 @@ const Login: React.FC = () => {
                         </IonButton>
                         <IonLoading isOpen={isLoading} />
                         <p style={{fontSize: "medium", textAlign: "center"}}>
-                            Don't have an account? <a href="/Register">Sign up!</a>
+                            Don't have an account? <a href="/register">Sign up!</a>
                         </p>
                     </IonCol>
                 </IonRow>
