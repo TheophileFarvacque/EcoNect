@@ -30,31 +30,13 @@ const ToolBar = () => {
                     <IonItem>
                         <IonIcon icon={chatbox} slot="start" />
                         <IonLabel>
-                            <Link to="/chat">Messages</Link>
+                            <Link to="/chatList">Messages</Link>
                         </IonLabel>
                     </IonItem>
                     <IonItem>
                         <IonIcon icon={car} slot="start" />
                         <IonLabel>
                             <Link to="/paths">Trajets</Link>
-                        </IonLabel>
-                    </IonItem>
-                    <IonItem>
-                        <IonIcon icon={map} slot="start" />
-                        <IonLabel>
-                            <Link to="/map">Carte</Link>
-                        </IonLabel>
-                    </IonItem>
-                    <IonItem>
-                        <IonIcon icon={barChart} slot="start" />
-                        <IonLabel>
-                            <Link to="/tab3">Consommation</Link>
-                        </IonLabel>
-                    </IonItem>
-                    <IonItem>
-                        <IonIcon icon={diamond} slot="start" />
-                        <IonLabel>
-                            <Link to="/avantages">Avantages</Link>
                         </IonLabel>
                     </IonItem>
                 </IonList>
