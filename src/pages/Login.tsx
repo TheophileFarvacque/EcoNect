@@ -35,8 +35,8 @@ const Login: React.FC = () => {
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
-    const mockEmail = 'a';
-    const mockPassword = 'a';
+    const mockEmail = 'john@gmail.com';
+    const mockPassword = 'azerty';
 
     const handleLogin = () => {
         setIsLoading(true);
@@ -120,7 +120,7 @@ const Login: React.FC = () => {
         <IonPage class="bg">
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>Econnect</IonTitle>
+                    <IonTitle>eConnect</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>
