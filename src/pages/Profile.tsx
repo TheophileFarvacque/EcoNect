@@ -10,21 +10,28 @@ import {
     IonCardContent,
     IonButton
 } from '@ionic/react';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Profile.css';
 import Header from "../components/header/header";
 import ToolBar from "../components/ToolBar";
+import LineChart from '../components/LineChart'; 
 import avatar from "../assets/images/avatar.png"
-import graph_co2 from "../assets/images/graph_co2.png"
 import {briefcase, pencil, home} from "ionicons/icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const chartData = {
+    labels: ['Sep', 'Oct', 'Nov', 'Dec', 'Janv'],
+    datasets: [
+        {
+            label: 'Co2',
+            data: [12, 19, 15, 13, 9],
+            fill: false,
+            borderColor: '#8FB43A',
+            borderWidth: 2,
+        },
+    ],
+};
 
 const Profile: React.FC = () => {
-    function getEmail() {
-        let email = localStorage.getItem('email');
-        return email;
-    }
-
     return (
         <IonPage>
             <Header/>
@@ -46,23 +53,18 @@ const Profile: React.FC = () => {
                             <IonItem>
                                 <IonIcon icon={home} slot="start" />
                                 <IonLabel className="" >16 Bd Général de Gaulle</IonLabel>
-                                <IonLabel className="profile-value">{getEmail()}</IonLabel>
                                 <IonIcon icon={pencil} slot="end" />
                             </IonItem>
                             <IonItem>
                                 <IonIcon icon={briefcase} slot="start" />
                                 <IonLabel className="" >3 rue de Broderie</IonLabel>
-                                <IonLabel className="profile-value">{getEmail()}</IonLabel>
                                 <IonIcon icon={pencil} slot="end" />
                             </IonItem>
                         </IonCardContent>
                     </IonCard>
                        
                     <IonCard className='card_conso'>
-                        <IonImg
-                            src={graph_co2}
-                            class="img"
-                        />
+                         <LineChart data={chartData} />
                         <IonLabel className='conso-label'>Consommation de Co2</IonLabel>
                     </IonCard>
                     

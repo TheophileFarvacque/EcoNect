@@ -7,7 +7,11 @@ import {
     IonPage,
     IonSearchbar,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonButton, IonBackButton, IonButtons
 } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Trajet.css';
@@ -15,72 +19,58 @@ import Header from "../components/header/header";
 import ToolBar from "../components/ToolBar";
 import React, {useState} from "react";
 import FetchProducts from "../services/mock-data-service";
+import {add, arrowBack} from "ionicons/icons";
 
 const Trajet: React.FC = () => {
-    const [searchText, setSearchText] = useState('');
-    const {data} = FetchProducts('https://api-revendeurs-qymc.onrender.com/Order');
-    const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(5);
-
-    const pageNumbers = [];
-    for (let i = 1; i <= Math.ceil(data?.length / itemsPerPage); i++) {
-        pageNumbers.push(i);
-    }
-
-    // Filter the products based on the search text
-    const filteredProducts = data?.filter((product: any) => {
-        return product.idCustomer.toString().includes(searchText.toString());
-    });
-
-    // Calculate the index of the first and last item to be displayed on the current page
-    const indexOfLastItem = (currentPage) * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-
-    // Slice the filtered products array to display only the items for the current page
-    const currentItems = filteredProducts?.slice(indexOfFirstItem, indexOfLastItem);
-
-    // Calculate the total number of pages based on the number of items and the itemsPerPage value
-    const totalPages = Math.ceil(filteredProducts?.length / itemsPerPage);
-
-    // Handler function for changing the current page
-
-
-    const handlePageChange = (newPage: number) => {
-        setCurrentPage(newPage);
-    };
-
-
-    const paginationButtons = [];
-    for (let i = 1; i < totalPages; i++) {
-        paginationButtons.push(
-            <button key={i} className={`pagination-button ${i === currentPage ? 'active' : ''}`} onClick={() => handlePageChange(i)}>
-                {i}
-            </button>
-        );
-    }
+    const trips = [
+        {
+            id: 1,
+            from: '123 rue Anonymous',
+            to: '16 Bd Général de Gaulle, 44200 Nantes',
+            contact: 'John Doe',
+            time: '9:00',
+        },
+        {
+            id: 2,
+            from: '789 Av tortuga',
+            to: '16 Bd Général de Gaulle, 44200 Nantes',
+            contact: 'Jack Sparrow',
+            time: '9:00',
+        },
+        {
+            id: 2,
+            from: '66 rue Mustafar',
+            to: '16 Bd Général de Gaulle, 44200 Nantes',
+            contact: 'Anakin Skywalker',
+            time: '9:30',
+        },
+        // Add more trips as needed
+    ];
     return (
         <IonPage>
             <Header />
+            <IonToolbar>
+                <IonTitle>Liste des trajets</IonTitle>
+            </IonToolbar>
             <IonContent fullscreen>
-                <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} placeholder="Search for orders" />
-                {currentItems?.map((product: any) => (
-                    <div key={product.id}>
-                        <IonCard routerLink={`/DetailOrder/${product.id}`} className="bg">
-                            <IonImg class="img"></IonImg>
-                            <IonCardHeader>
-                                <IonCardTitle>Order #{product.idCustomer}</IonCardTitle>
-                                <IonCardSubtitle>{product.createdAt.split('T00:00:00')}</IonCardSubtitle>
-                            </IonCardHeader>
-
-                            <IonCardContent>
-
-                            </IonCardContent>
-                        </IonCard>
-                    </div>
+                {trips.map((trip) => (
+                    <IonCard key={trip.id}>
+                        <IonCardHeader>
+                            <IonCardSubtitle>{trip.contact}</IonCardSubtitle>
+                            <IonCardTitle>Détails du trajet</IonCardTitle>
+                        </IonCardHeader>
+                        <IonCardContent>
+                            <p>Départ: {trip.from}</p>
+                            <p>Arrivé: {trip.to}</p>
+                            <p>Heure: {trip.time}</p>
+                        </IonCardContent>
+                    </IonCard>
                 ))}
-                <div className="pagination">
-                    {paginationButtons}
-                </div>
+                <IonFab vertical="bottom" horizontal="end" slot="fixed">
+                    <IonButton routerLink="/newPaths">
+                        <IonIcon icon={add} /> {/* Plus icon */}
+                    </IonButton>
+                </IonFab>
             </IonContent>
         </IonPage>
     );

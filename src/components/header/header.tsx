@@ -22,7 +22,7 @@ const Header: React.FC = () => {
                     <IonMenuButton color={"dark"}></IonMenuButton>
                 </IonButtons>
                 <IonRow>
-                    <IonTitle style={{ textAlign: 'center' }}>Econnect</IonTitle>
+                    <IonTitle style={{ textAlign: 'center' }}>eConnect</IonTitle>
                     <IonButton onClick={logout}>
                         <FontAwesomeIcon icon={faRightFromBracket} />
                     </IonButton>
