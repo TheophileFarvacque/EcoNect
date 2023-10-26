@@ -39,24 +39,6 @@ const ToolBar = () => {
                             <Link to="/paths">Trajets</Link>
                         </IonLabel>
                     </IonItem>
-                    <IonItem>
-                        <IonIcon icon={map} slot="start" />
-                        <IonLabel>
-                            <Link to="/home">Carte</Link>
-                        </IonLabel>
-                    </IonItem>
-                    <IonItem>
-                        <IonIcon icon={barChart} slot="start" />
-                        <IonLabel>
-                            <Link to="/tab3">Consommation</Link>
-                        </IonLabel>
-                    </IonItem>
-                    <IonItem>
-                        <IonIcon icon={diamond} slot="start" />
-                        <IonLabel>
-                            <Link to="/avantages">Avantages</Link>
-                        </IonLabel>
-                    </IonItem>
                 </IonList>
             </IonContent>
         </IonMenu>
