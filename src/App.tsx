@@ -27,7 +27,7 @@ import DetailOrder from './pages/DetailOrder';
 import Register from './pages/Register';
 import ToolBar from './components/ToolBar';
 import Map from "./pages/Map";
-
+import Avantages from './pages/Avantages';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -48,6 +48,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import React from "react";
 import ChatBox from "./pages/ChatBox";
+import ChatList from "./pages/ChatList";
 
 setupIonicReact();
 const App: React.FC = () => (
@@ -64,7 +65,7 @@ const App: React.FC = () => (
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/tab2">
+          <Route path="/paths">
             <Trajet />
           </Route>
           <Route path="/profile">
@@ -73,8 +74,14 @@ const App: React.FC = () => (
           <Route path="/map">
             <Map />
           </Route>
-          <Route path="/chat">
+          <Route path="/chatList">
+            <ChatList />
+          </Route>
+          <Route path="/chat/:contactId">
             <ChatBox />
+          </Route>
+          <Route path="/avantages">
+            <Avantages />
           </Route>
           <Route exact path="/">
             <Redirect to="/login" />
